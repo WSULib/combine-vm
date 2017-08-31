@@ -1,0 +1,39 @@
+#!/bin/bash
+
+#
+# Contains Environment variables for installing combine-vm services
+#
+
+
+# VM IP
+VM_HOST='192.168.45.1'
+VM_NAME='combine-vm'
+
+
+# Elasticsearch
+ES_version='5.5.2'
+ES_host='http://localhost'
+ES_port='9200'
+
+# Livy
+livy_version='0.3.0'
+livy_host='http://localhost'
+livy_port='8998'
+
+
+# Ingestion3
+ingestion3_jar
+avro_directory
+
+# Spark
+spark_version="2.0.1"
+
+
+# Jupyter
+jupyter_version
+
+# Django
+django_version='1.11.4'
+
+#Scala
+scala_version='2.11.8'
