@@ -106,7 +106,7 @@ fi
 usermod -a -G admin vagrant
 
 # Create livy user - no shell access
-useradd -s /usr/sbin/nologin loris
+useradd -s /usr/sbin/nologin livy
 
 # Create spark user - no shell access
 useradd -s /usr/sbin/nologin spark
