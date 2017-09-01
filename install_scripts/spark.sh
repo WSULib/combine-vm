@@ -32,7 +32,7 @@ wget https://d3kbcqa49mib13.cloudfront.net/spark-$spark_version-bin-hadoop2.7.tg
 tar -xvf spark-$spark_version-bin-hadoop2.7.tgz
 
 mkdir /opt/spark
-mv spark-$spark_version-bin-hadoop2.7 /opt/spark/
+mv spark-$spark_version-bin-hadoop2.7/* /opt/spark/
 cp /opt/spark/conf/spark-defaults.conf.template /opt/spark/conf/spark-defaults.conf
 
 echo "spark.jars opt/ingestion3/target/scala-2.11/ingestion3_2.11-0.0.1.jar" >> /opt/spark/conf/spark-defaults.conf
