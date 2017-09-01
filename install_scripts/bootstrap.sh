@@ -95,10 +95,8 @@ fi
 #admin-ify vagrant
 usermod -a -G admin vagrant
 
-# Create livy user
-useradd -m -s /bin/bash loris
-echo loris:password | chpasswd
+# Create livy user - no shell access
+useradd -s /usr/sbin/nologin loris
 
-# Create spark user
-useradd -m -s /bin/bash loris
-echo loris:password | chpasswd
+# Create spark user - no shell access
+useradd -s /usr/sbin/nologin spark
