@@ -35,5 +35,5 @@ jupyter_version
 # Django
 django_version='1.11.4'
 
-#Scala
+# Scala
 scala_version='2.11.8'
