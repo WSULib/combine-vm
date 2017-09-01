@@ -27,12 +27,13 @@ sudo apt-get -y install sbt
 
 # Install Spark
 cd /tmp/
-wget https://d3kbcqa49mib13.cloudfront.net/spark-2.0.1-bin-hadoop2.7.tgz
+wget https://d3kbcqa49mib13.cloudfront.net/spark-$spark_version-bin-hadoop2.7.tgz
 
-tar -xvf spark-2.0.1-bin-hadoop2.7.tgz
+tar -xvf spark-$spark_version-bin-hadoop2.7.tgz
 
-mv spark-2.0.1-bin-hadoop2.7 /opt/spark/
+mkdir /opt/spark
+mv spark-$spark_version-bin-hadoop2.7 /opt/spark/
+cp /opt/spark/conf/spark-defaults.conf.template /opt/spark/conf/spark-defaults.conf
 
-SET /etc/environment
-
-# Insert test that shows it's running
+echo "spark.jars opt/ingestion3/target/scala-2.11/ingestion3_2.11-0.0.1.jar" >> /opt/spark/conf/spark-defaults.conf
+echo "spark.jars.packages org.apache.httpcomponents:fluent-hc:4.5.2,com.databricks:spark-avro_2.11:3.2.0" >> /opt/spark/conf/spark-defaults.conf
