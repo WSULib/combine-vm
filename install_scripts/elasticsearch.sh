@@ -7,11 +7,12 @@ SHARED_DIR=$1
 
 if [ -f "$SHARED_DIR/config/envvars" ]; then
   . $SHARED_DIR/config/envvars
-  printf "Found your local envvars file. Using it."
+  printf "found your local envvars file. Using it."
 
 else
-  printf "Could not find envvars - remember to copy /config/envvars.* (e.g. envvars.public) to /config/envvars.  Aborting."
-  exit 1
+  . $SHARED_DIR/config/envvars.default
+  printf "found your template file. Using its default values."
+
 fi
 #################################################################
 
@@ -37,8 +38,3 @@ dpkg -i elasticsearch-5.5.2.deb
 # Enable Elasticsearch upon boot
 /bin/systemctl daemon-reload
 /bin/systemctl enable elasticsearch.service
-
-# Verify it running
-curl -XGET "$ES_host:$ES_port/?pretty"
-
-status=$(curl -s -o /dev/null -I -w "%{http_code}" "${ES_host}:${ES_port}")
