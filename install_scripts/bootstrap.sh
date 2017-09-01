@@ -77,8 +77,17 @@ apt-get -y install htop tree ncdu
 
 # setup tailing
 apt-get -y install multitail
-echo "multitail /var/log/apache2/$VM_NAME-access.log /var/log/apache2/$VM_NAME-error.log /var/log/tomcat7/catalina.out /var/log/ouroboros.err.log /var/log/celery.err.log /opt/fedora/server/logs/fedora.log" > /usr/bin/alltails
+echo "multitail /var/log/apache2/$VM_NAME-access.log /var/log/apache2/$VM_NAME-error.log" > /usr/bin/alltails
 chmod +x /usr/bin/alltails
+
+# DB install
+
+# Set MySQL password
+debconf-set-selections <<< "mysql-server mysql-server/root_password password $SQL_PASSWORD"
+debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $SQL_PASSWORD"
+
+# Install MySQL
+apt-get -y install mysql-server
 
 # UPDATE NETWORKING ON NON-VAGRANT INSTALLS
 #########################################################
