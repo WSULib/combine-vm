@@ -33,3 +33,6 @@ chown -R livy:livy /opt/livy
 echo "export SPARK_HOME=/opt/spark/$spark_version" >> /etc/environment
 
 echo "livy.file.local-dir-whitelist = /opt/ingestion3/target/scala-2.11/" >> /opt/livy/conf/livy.conf
+
+# firewall exception
+ufw allow 8998

@@ -81,6 +81,9 @@ apt-get -y install multitail
 echo "multitail /var/log/apache2/$VM_NAME-access.log /var/log/apache2/$VM_NAME-error.log" > /usr/bin/alltails
 chmod +x /usr/bin/alltails
 
+# firewall
+ufw enable
+
 # DB install
 
 # Set MySQL password

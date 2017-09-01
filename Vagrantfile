@@ -13,6 +13,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider "virtualbox" do |vb|
     vb.memory = 6072
     vb.cpus = 2
+    config.vm.network :forwarded_port, guest: 9200, host: 9200
+    #config.vm.network :forwarded_port, guest: 443, host: 4571
     config.vm.network "private_network", ip: "192.168.45.10"
   end
 
