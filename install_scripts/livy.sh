@@ -18,7 +18,11 @@ fi
 
 mkdir /opt/livy
 
-git clone https://github.com/cloudera/livy/releases/tag/v$livy_version /opt/livy
+wget https://github.com/cloudera/livy/archive/v$livy_version.tar.gz
+
+tar -xvf v$livy_version.tar.gz
+
+mv livy-$livy_version/* /opt/livy
 
 cd /opt/livy
 
