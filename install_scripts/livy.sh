@@ -15,3 +15,17 @@ else
 
 fi
 #################################################################
+
+mkdir /opt/livy
+
+git clone https://github.com/cloudera/livy/releases/tag/v$livy_version /opt/livy
+
+cd /opt/livy
+
+mvn package -DskipTtests
+
+chown -R livy:livy /opt/livy
+
+echo "export SPARK_HOME=/opt/spark/$spark_version" >> /etc/environment
+
+echo "livy.file.local-dir-whitelist = /opt/ingestion3/target/scala-2.11/" >> /opt/livy/conf/livy.conf
