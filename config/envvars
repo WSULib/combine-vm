@@ -6,7 +6,7 @@
 
 
 # VM IP
-VM_HOST='192.168.45.1'
+VM_HOST='192.168.45.10'
 VM_NAME='combine-vm'
 
 

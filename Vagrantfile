@@ -13,7 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider "virtualbox" do |vb|
     vb.memory = 2048
     vb.cpus = 2
-    config.vm.network "private_network", ip: "VM_IP"
+    config.vm.network "private_network", ip: "192.168.45.10"
   end
 
   # sets shared dir that is passed to bootstrap
