@@ -20,5 +20,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   shared_dir = "/vagrant"  
 
   config.vm.provision "shell", path: "./install_scripts/bootstrap.sh", args: shared_dir
+  config.vm.provision "shell", path: "./install_scripts/apache.sh", args: shared_dir
+  config.vm.provision "shell", path: "./install_scripts/java.sh", args: shared_dir
+  config.vm.provision "shell", path: "./install_scripts/elasticsearch.sh", args: shared_dir
+  config.vm.provision "shell", path: "./install_scripts/ingestion3.sh", args: shared_dir  
+  config.vm.provision "shell", path: "./install_scripts/spark.sh", args: shared_dir
+  config.vm.provision "shell", path: "./install_scripts/livy.sh", args: shared_dir
+  config.vm.provision "shell", path: "./install_scripts/results.sh", args: shared_dir
 
 end
