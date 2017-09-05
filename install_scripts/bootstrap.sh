@@ -66,6 +66,9 @@ deactivate
 
 sudo chown -R :admin /usr/local/lib/venvs
 
+# jupyter notebook
+pip install jupyter
+
 # Git vim
 apt-get -y install git vim
 
