@@ -28,9 +28,6 @@ service apache2 restart
 a2enmod cache cgi cache_disk expires headers proxy proxy_ajp proxy_connect proxy_http reqtimeout rewrite ssl
 service apache2 restart
 
-# set firewall rules
-ufw  allow in 'Apache Full'
-
 a2dissite 000-default.conf
 service apache2 restart
 

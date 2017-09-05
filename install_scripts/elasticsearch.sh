@@ -34,9 +34,6 @@ fi
 # Install Elasticsearch
 dpkg -i elasticsearch-5.5.2.deb
 
-# firewall exception
-ufw allow 9200
-
 # Enable Elasticsearch upon boot
 /bin/systemctl daemon-reload
 /bin/systemctl enable elasticsearch.service
