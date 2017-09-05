@@ -83,6 +83,9 @@ apt-get -y install multitail
 echo "multitail /var/log/apache2/$VM_NAME-access.log /var/log/apache2/$VM_NAME-error.log" > /usr/bin/alltails
 chmod +x /usr/bin/alltails
 
+# upgrade setuptools so that Livy will install
+sudo -H pip install setuptools --upgrade
+
 # DB install
 
 # Set MySQL password
