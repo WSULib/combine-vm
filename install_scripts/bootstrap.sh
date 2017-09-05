@@ -56,13 +56,6 @@ echo "source /usr/local/bin/virtualenvwrapper.sh" >> /etc/bash.bashrc
 # Set virtualenv variables and source file to work in current session
 WORKON_HOME=/usr/local/lib/venvs
 source /usr/local/bin/virtualenvwrapper.sh
-# Create an environment for the combine python app
-mkvirtualenv combine
-
-# Install ipython on combine
-workon combine
-pip install ipython
-deactivate
 
 sudo chown -R :admin /usr/local/lib/venvs
 
