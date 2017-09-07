@@ -32,3 +32,6 @@ fi
 
 # Maven
 apt-get -y install maven
+
+# SET JAVA_HOME
+echo "export JAVA_HOME=/usr/lib/jvm/java-8-oracle" >> /etc/environment

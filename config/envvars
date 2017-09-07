@@ -37,3 +37,6 @@ django_version='1.11.4'
 
 # Scala
 scala_version='2.11.8'
+
+# Hadoop
+hadoop_version='2.7.4'
