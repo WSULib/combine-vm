@@ -28,8 +28,10 @@ cd /opt/livy
 
 mvn package -DskipTtests
 
-chown -R livy:livy /opt/livy
+mkdir logs
 
-echo "export SPARK_HOME=/opt/spark/$spark_version" >> /etc/environment
+chown -R combine:combine /opt/livy
+
+echo "export SPARK_HOME=/opt/spark" >> /etc/environment
 
 echo "livy.file.local-dir-whitelist = /opt/ingestion3/target/scala-2.11/" >> /opt/livy/conf/livy.conf

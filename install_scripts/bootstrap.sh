@@ -103,8 +103,5 @@ fi
 #admin-ify vagrant
 usermod -a -G admin vagrant
 
-# Create livy user - no shell access
-useradd -s /usr/sbin/nologin livy
-
-# Create spark user - no shell access
-useradd -s /usr/sbin/nologin spark
+# Create combine user - no shell access
+useradd -s /usr/sbin/nologin combine

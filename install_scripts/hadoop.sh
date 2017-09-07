@@ -41,6 +41,8 @@ cp $SHARED_DIR/config/files/hdfs-site.xml $HADOOP_PREFIX/etc/hadoop/hdfs-site.xm
 cp $SHARED_DIR/config/files/core-site.xml $HADOOP_PREFIX/etc/hadoop/core-site.xml
 cp $SHARED_DIR/config/files/yarn-site.xml $HADOOP_PREFIX/etc/hadoop/yarn-site.xml
 
+sudo chown -R combine:combine opt/hadoop
+
 ## Start HDFS daemons
 # Format the namenode directory (DO THIS ONLY ONCE, THE FIRST TIME)
 $HADOOP_PREFIX/bin/hdfs namenode -format

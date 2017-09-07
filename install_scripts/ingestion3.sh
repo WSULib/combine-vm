@@ -21,4 +21,4 @@ git clone https://github.com/WSULIb/ingestion3.git /opt/ingestion3
 
 cd /opt/ingestion3
 sbt package
-chown -R spark:spark /opt/ingestion3
+chown -R combine:combine /opt/ingestion3
