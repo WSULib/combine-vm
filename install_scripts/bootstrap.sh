@@ -112,6 +112,5 @@ fi
 usermod -a -G combine vagrant
 
 # Create combine user
-useradd -m -s /bin/bash combine
-usermod -g combine combine
+useradd -m -s -g /bin/bash combine
 echo combine:combine | chpasswd
