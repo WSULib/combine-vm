@@ -36,7 +36,7 @@ jupyter_version=''
 django_version='1.11.4'
 
 # Scala
-scala_version='2.11.8'
+scala_version='2.11'
 
 # Hadoop
 hadoop_version='2.7.4'
