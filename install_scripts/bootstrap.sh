@@ -48,7 +48,7 @@ sudo apt-get -y purge python-six
 # Install virtualenv and wrappers
 pip install virtualenv virtualenvwrapper
 mkdir /usr/local/lib/venvs
-sudo chown :admin /usr/local/lib/venvs
+chown :combine /usr/local/lib/venvs
 echo "WORKON_HOME=/usr/local/lib/venvs" >> /etc/environment
 echo "# Added for virtualenvwrapper" >> /etc/bash.bashrc
 echo "source /usr/local/bin/virtualenvwrapper.sh" >> /etc/bash.bashrc
@@ -57,7 +57,16 @@ echo "source /usr/local/bin/virtualenvwrapper.sh" >> /etc/bash.bashrc
 WORKON_HOME=/usr/local/lib/venvs
 source /usr/local/bin/virtualenvwrapper.sh
 
-sudo chown -R :admin /usr/local/lib/venvs
+# Make and start combine virtual environment
+mkvirtualenv -p python3 combine
+workon combine
+
+chown -R :combine /usr/local/lib/venvs
+chmod -R 774 /usr/local/lib/venvs/combine
+
+# stop virtualenv
+deactivate
+echo "deactivating virtualenv"
 
 # jupyter notebook
 pip install jupyter
@@ -97,11 +106,11 @@ else
 fi
 
 
-# CREATE USERS
+# USERS
 #########################################################
-
-#admin-ify vagrant
-usermod -a -G admin vagrant
 
 # Create combine user - no shell access
 useradd -s /usr/sbin/nologin combine
+
+#combine-ify vagrant
+usermod -a -G combine vagrant
