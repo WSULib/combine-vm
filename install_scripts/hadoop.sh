@@ -36,6 +36,8 @@ export HADOOP_MAPRED_HOME=\$HADOOP_PREFIX
 export HADOOP_YARN_HOME=\$HADOOP_PREFIX
 EOT
 
+source /etc/environment
+
 # Copy configuration files for hadoop and yarn from /config/files
 cp $SHARED_DIR/config/files/hdfs-site.xml $HADOOP_PREFIX/etc/hadoop/hdfs-site.xml
 cp $SHARED_DIR/config/files/core-site.xml $HADOOP_PREFIX/etc/hadoop/core-site.xml

@@ -24,8 +24,8 @@ apt-get -y update && apt-get -y upgrade
 # SSH
 apt-get -y install openssh-server
 
-# create admin group
-groupadd admin
+# create combine group
+groupadd combine
 
 # Build tools
 apt-get -y install build-essential
@@ -62,7 +62,6 @@ mkvirtualenv -p python3 combine
 workon combine
 
 chown -R :combine /usr/local/lib/venvs
-chmod -R 774 /usr/local/lib/venvs/combine
 
 # stop virtualenv
 deactivate
@@ -109,8 +108,10 @@ fi
 # USERS
 #########################################################
 
-# Create combine user - no shell access
-useradd -s /usr/sbin/nologin combine
-
 #combine-ify vagrant
 usermod -a -G combine vagrant
+
+# Create combine user
+useradd -m -s /bin/bash combine
+usermod -g combine combine
+echo combine:combine | chpasswd
