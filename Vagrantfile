@@ -26,6 +26,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "./install_scripts/ingestion3.sh", args: shared_dir  
   config.vm.provision "shell", path: "./install_scripts/spark.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/livy.sh", args: shared_dir
+  config.vm.provision "shell", path: "./install_scripts/hadoop.sh", args: shared_dir
+  config.vm.provision "shell", path: "./install_scripts/supervisor.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/results.sh", args: shared_dir
 
 end
