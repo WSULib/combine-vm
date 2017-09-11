@@ -34,6 +34,8 @@ fi
 # Install Elasticsearch
 dpkg -i elasticsearch-5.5.2.deb
 
+cp $SHARED_DIR/config/files/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
+
 # Enable Elasticsearch upon boot
 /bin/systemctl daemon-reload
 /bin/systemctl enable elasticsearch.service
