@@ -26,7 +26,7 @@ mv livy-$livy_version/* /opt/livy
 
 cd /opt/livy
 
-mvn package -DskipTtests
+mvn package -DskipTests
 
 mkdir logs
 
