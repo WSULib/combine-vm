@@ -35,7 +35,7 @@ mkdir /opt/spark
 mv spark-$spark_version-bin-hadoop2.7/* /opt/spark/
 cp /opt/spark/conf/spark-defaults.conf.template /opt/spark/conf/spark-defaults.conf
 
-echo "spark.jars /opt/ingestion3/target/$scala_version/ingestion3_$scala_version-0.0.1.jar" >> /opt/spark/conf/spark-defaults.conf
+echo "spark.jars /opt/ingestion3/target/scala-$scala_version/ingestion3_$scala_version-0.0.1.jar" >> /opt/spark/conf/spark-defaults.conf
 echo "spark.jars.packages org.apache.httpcomponents:fluent-hc:4.5.2,com.databricks:spark-avro_2.11:3.2.0" >> /opt/spark/conf/spark-defaults.conf
 
 sudo chown -R combine:combine /opt/spark
