@@ -45,5 +45,4 @@ service apache2 restart
 
 # enable all sites
 a2ensite 000-default.conf
-a2ensite 000-default-ssl.conf
 service apache2 restart
