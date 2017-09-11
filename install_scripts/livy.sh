@@ -38,7 +38,7 @@ cat <<EOT >> /opt/livy/conf/livy.conf
 livy.spark.master = yarn
 livy.spark.deployMode = cluster
 livy.impersonation.enabled = true
-livy.file.local-dir-whitelist = /opt/ingestion3/target/scala-\$scala_version/
+livy.file.local-dir-whitelist = /opt/ingestion3/target/scala-$scala_version/
 livy.server.recovery.mode = recovery
 livy.server.recovery.state-store = filesystem
 livy.server.recovery.state-store.url = hdfs://localhost/livy_sessions
@@ -46,4 +46,4 @@ EOT
 
 
 # make a symlink from ingestion3 jar file to a spot in livy application directory
-ln -s /opt/ingestion3/target/$scala_version/ingestion3_$scala_version-0.0.1.jar /opt/livy/rsc/target/jars/ingestion3.jar
+ln -s /opt/ingestion3/target/scala-$scala_version/ingestion3_$scala_version-0.0.1.jar /opt/livy/rsc/target/jars/ingestion3.jar
