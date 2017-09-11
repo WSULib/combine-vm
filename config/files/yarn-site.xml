@@ -43,4 +43,13 @@
         <value>2</value>
         <description>Number of CPU cores that can be allocated for containers.</description>
     </property>
+    <property>
+        <name>yarn.nodemanager.pmem-check-enabled</name>
+        <value>false</value>
+    </property>
+
+    <property>
+        <name>yarn.nodemanager.vmem-check-enabled</name>
+        <value>false</value>
+    </property>
 </configuration>
