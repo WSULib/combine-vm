@@ -15,6 +15,19 @@ else
 fi
 #################################################################
 
+# USERS
+#########################################################
+
+# Create combine user
+useradd -m -s /bin/bash combine
+echo combine:combine | chpasswd
+
+#combine-ify vagrant
+usermod -a -G combine vagrant
+
+# TOOLS
+#########################################
+
 # fix interactivity issue
 export DEBIAN_FRONTEND=noninteractive
 
@@ -23,9 +36,6 @@ apt-get -y update && apt-get -y upgrade
 
 # SSH
 apt-get -y install openssh-server
-
-# create combine group
-groupadd combine
 
 # Build tools
 apt-get -y install build-essential
@@ -103,14 +113,3 @@ if [ -z ${NON_VAGRANT+x} ]; then
 else
   vim /etc/hosts;
 fi
-
-
-# USERS
-#########################################################
-
-#combine-ify vagrant
-usermod -a -G combine vagrant
-
-# Create combine user
-useradd -m -s -g /bin/bash combine
-echo combine:combine | chpasswd
