@@ -12,12 +12,10 @@ VM_NAME='combine-vm'
 
 # Elasticsearch
 ES_version='5.5.2'
-ES_host='http://localhost'
 ES_port='9200'
 
 # Livy
 livy_version='0.3.0'
-livy_host='http://localhost'
 livy_port='8998'
 
 

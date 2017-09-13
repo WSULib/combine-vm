@@ -25,5 +25,17 @@ cp $SHARED_DIR/config/files/supervisord.conf /etc/supervisor/
 # chown supervisor directory for combine user
 chown -R combine:combine /etc/supervisor
 
+# make combine owner of supervisor logs
+chown -R combine:combine /var/log/supervisor
+
+# make a logs folder for hadoop/yarn programs to write to
+mkdir /var/log/hadoop
+chown -R combine:combine /var/log/hadoop
+
+# make a logs folder for Livy program to write to
+mkdir /var/log/livy
+chown -R combine:combine /var/log/livy
+
 # restart
-service supervisor restart
+service supervisor stop
+service supervisor start

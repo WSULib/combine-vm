@@ -32,7 +32,7 @@ mkdir logs
 
 chown -R combine:combine /opt/livy
 
-echo "export SPARK_HOME=/opt/spark" >> /etc/environment
+echo "SPARK_HOME=/opt/spark" >> /opt/livy/conf/livy-env.sh
 
 cat <<EOT >> /opt/livy/conf/livy.conf
 livy.spark.master = yarn
@@ -42,6 +42,7 @@ livy.file.local-dir-whitelist = /opt/ingestion3/target/scala-$scala_version/
 livy.server.recovery.mode = recovery
 livy.server.recovery.state-store = filesystem
 livy.server.recovery.state-store.url = hdfs://localhost/livy_sessions
+livy.server.session.timeout = 24h
 EOT
 
 
