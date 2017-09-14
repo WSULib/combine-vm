@@ -17,13 +17,16 @@ fi
 
 # USERS
 #########################################################
+#create admin group
+groupadd admin
 
 # Create combine user
 useradd -m -s /bin/bash combine
 echo combine:combine | chpasswd
 
-#combine-ify vagrant
+# update some groups
 usermod -a -G combine vagrant
+usermod -a -G admin combine
 
 # TOOLS
 #########################################
