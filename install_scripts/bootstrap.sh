@@ -104,7 +104,7 @@ debconf-set-selections <<< "mysql-server mysql-server/root_password password $SQ
 debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $SQL_PASSWORD"
 
 # Install MySQL
-apt-get -y install mysql-server
+apt-get -y install mysql-server libmysqlclient-dev
 
 # UPDATE NETWORKING ON NON-VAGRANT INSTALLS
 #########################################################
