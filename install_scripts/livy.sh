@@ -32,7 +32,15 @@ mkdir logs
 
 chown -R combine:combine /opt/livy
 
-echo "SPARK_HOME=/opt/spark" >> /opt/livy/conf/livy-env.sh
+cat <<EOT >> /opt/livy/conf/livy-env.sh
+SPARK_HOME=/opt/spark
+HADOOP_PREFIX=/opt/hadoop
+HADOOP_HOME=/opt/hadoop
+HADOOP_COMMON_HOME=/opt/hadoop
+HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop
+HADOOP_HDFS_HOME=/opt/hadoop
+HADOOP_MAPRED_HOME=/opt/hadoop
+HADOOP_YARN_HOME=/opt/hadoop
 
 cat <<EOT >> /opt/livy/conf/livy.conf
 livy.spark.master = yarn
