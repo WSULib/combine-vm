@@ -74,7 +74,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 mkvirtualenv -p python3 combine
 workon combine
 
-chown -R :combine /usr/local/lib/venvs
+chown -R combine:combine /usr/local/lib/venvs
 
 # stop virtualenv
 deactivate
