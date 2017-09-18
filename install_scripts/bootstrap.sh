@@ -58,28 +58,6 @@ sudo apt-get -y install zlib1g-dev
 # Remove python-six in order to allow pip to install the most up-to-date version of six
 sudo apt-get -y purge python-six
 
-# Install virtualenv and wrappers
-pip install virtualenv virtualenvwrapper
-mkdir /usr/local/lib/venvs
-chown :combine /usr/local/lib/venvs
-echo "WORKON_HOME=/usr/local/lib/venvs" >> /etc/environment
-echo "# Added for virtualenvwrapper" >> /etc/bash.bashrc
-echo "source /usr/local/bin/virtualenvwrapper.sh" >> /etc/bash.bashrc
-
-# Set virtualenv variables and source file to work in current session
-WORKON_HOME=/usr/local/lib/venvs
-source /usr/local/bin/virtualenvwrapper.sh
-
-# Make and start combine virtual environment
-mkvirtualenv -p python3 combine
-workon combine
-
-chown -R combine:combine /usr/local/lib/venvs
-
-# stop virtualenv
-deactivate
-echo "deactivating virtualenv"
-
 # jupyter notebook
 pip install jupyter
 
