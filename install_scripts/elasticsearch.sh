@@ -39,3 +39,7 @@ cp $SHARED_DIR/config/files/elasticsearch.yml /etc/elasticsearch/elasticsearch.y
 # Enable Elasticsearch upon boot
 /bin/systemctl daemon-reload
 /bin/systemctl enable elasticsearch.service
+
+# Start up elasticsearch
+service elasticsearch stop
+service elasticsearch start

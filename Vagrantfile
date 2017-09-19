@@ -29,5 +29,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", path: "./install_scripts/hadoop.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/cyavro.sh", args: shared_dir
   config.vm.provision "shell", path: "./install_scripts/supervisor.sh", args: shared_dir
+  config.vm.provision "shell", path: "./install_scripts/combine.sh", args: shared_dir
 
 end
