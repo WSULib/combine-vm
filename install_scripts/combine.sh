@@ -46,7 +46,8 @@ python /opt/combine/manage.py migrate
 echo "from django.contrib.auth.models import User; User.objects.create_superuser('combine', 'libwebmaster@wayne.edu', '$SQL_PASSWORD')" | python /opt/combine/manage.py shell
 
 # Make directory that will hold avro files
-mkdir -p /home/combine/data/combine/avro
+mkdir -p /home/combine/data/combine
+chown -R combine:combine /home/combine/data
 
 # Set permissions
 chown -R combine:combine /opt/combine
