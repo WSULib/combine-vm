@@ -34,6 +34,7 @@ chown -R combine:combine /opt/livy
 
 HADOOP_PREFIX=/opt/hadoop
 
+# set configurations in livy-env.sh
 cat <<EOT >> /opt/livy/conf/livy-env.sh
 SPARK_HOME=/opt/spark
 HADOOP_PREFIX=/opt/hadoop
@@ -43,7 +44,9 @@ HADOOP_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
 HADOOP_HDFS_HOME=$HADOOP_PREFIX
 HADOOP_MAPRED_HOME=$HADOOP_PREFIX
 HADOOP_YARN_HOME=$HADOOP_PREFIX
+EOT
 
+# set configurations in livy-conf.sh
 cat <<EOT >> /opt/livy/conf/livy.conf
 livy.spark.master = yarn
 livy.spark.deployMode = cluster
@@ -54,7 +57,6 @@ livy.server.recovery.state-store = filesystem
 livy.server.recovery.state-store.url = hdfs://localhost/livy_sessions
 livy.server.session.timeout = 24h
 EOT
-
 
 # make a symlink from ingestion3 jar file to a spot in livy application directory
 ln -s /opt/ingestion3/target/scala-$scala_version/ingestion3_$scala_version-0.0.1.jar /opt/livy/rsc/target/jars/ingestion3.jar

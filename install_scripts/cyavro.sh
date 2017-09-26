@@ -16,6 +16,7 @@ else
 fi
 #################################################################
 
+# install miniconda
 cd /tmp/
 wget https://repo.continuum.io/miniconda/Miniconda2-4.3.21-Linux-x86_64.sh -O miniconda.sh
 bash miniconda.sh -b -p /opt/miniconda
@@ -25,8 +26,11 @@ conda config --add channels conda-forge
 # put in combine's path
 echo "export PATH=/opt/miniconda/bin:$PATH" >> /home/combine/.bashrc
 
-conda create -n combine python=3.6
+# create combine conda environment for first time
+conda create -n combine python=3.5
 source activate combine
+
+# install cyavro
 conda install cyavro
 source deactivate
 chown -R combine:combine /opt/miniconda

@@ -47,6 +47,7 @@ echo "export JAVA_HOME=/usr/lib/jvm/java-8-oracle" >> /$HADOOP_PREFIX/etc/hadoop
 cp $SHARED_DIR/config/files/hdfs-site.xml $HADOOP_PREFIX/etc/hadoop/hdfs-site.xml
 cp $SHARED_DIR/config/files/core-site.xml $HADOOP_PREFIX/etc/hadoop/core-site.xml
 cp $SHARED_DIR/config/files/yarn-site.xml $HADOOP_PREFIX/etc/hadoop/yarn-site.xml
+cp $SHARED_DIR/config/files/mapred-site.xml $HADOOP_PREFIX/etc/hadoop/mapred-site.xml
 
 ## Start HDFS daemons
 # Format the namenode directory (DO THIS ONLY ONCE, THE FIRST TIME)

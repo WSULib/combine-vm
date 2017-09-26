@@ -13,36 +13,49 @@
   limitations under the License. See accompanying LICENSE file.
 -->
 <configuration>
+    
     <property>
         <name>yarn.scheduler.minimum-allocation-mb</name>
         <value>128</value>
-        <description>Minimum limit of memory to allocate to each container request at the Resource Manager.</description>
     </property>
+
     <property>
         <name>yarn.scheduler.maximum-allocation-mb</name>
-        <value>2048</value>
-        <description>Maximum limit of memory to allocate to each container request at the Resource Manager.</description>
+        <value>6144</value>
     </property>
+
+    <property>
+        <name>yarn.scheduler.increment-allocation-mb</name>
+        <value>128</value>
+    </property>
+
     <property>
         <name>yarn.scheduler.minimum-allocation-vcores</name>
         <value>1</value>
-        <description>The minimum allocation for every container request at the RM, in terms of virtual CPU cores. Requests lower than this won't take effect, and the specified value will get allocated the minimum.</description>
     </property>
+
     <property>
         <name>yarn.scheduler.maximum-allocation-vcores</name>
-        <value>2</value>
-        <description>The maximum allocation for every container request at the RM, in terms of virtual CPU cores. Requests higher than this won't take effect, and will get capped to this value.</description>
+        <value>1</value>
     </property>
+
+    <property>
+        <name>yarn.scheduler.increment-allocation-vcores</name>
+        <value>1</value>
+    </property>
+    
     <property>
         <name>yarn.nodemanager.resource.memory-mb</name>
-        <value>4096</value>
+        <value>6144</value>
         <description>Physical memory, in MB, to be made available to running containers</description>
     </property>
+
     <property>
         <name>yarn.nodemanager.resource.cpu-vcores</name>
-        <value>2</value>
+        <value>1</value>
         <description>Number of CPU cores that can be allocated for containers.</description>
     </property>
+
     <property>
         <name>yarn.nodemanager.pmem-check-enabled</name>
         <value>false</value>
@@ -52,4 +65,10 @@
         <name>yarn.nodemanager.vmem-check-enabled</name>
         <value>false</value>
     </property>
+
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+    </property>
+
 </configuration>
