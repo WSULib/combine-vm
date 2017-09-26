@@ -31,8 +31,11 @@ tar -xvf spark-$spark_version-bin-hadoop2.7.tgz
 mkdir /opt/spark
 mv spark-$spark_version-bin-hadoop2.7/* /opt/spark/
 
-# copy pre-made config file
-cp $SHARED_DIR/config/files/spark-defaults.conf /opt/spark/conf/spark-defaults.conf
+# copy pre-made config file, sed config settings, and copy to SPARK_HOME
+cp $SHARED_DIR/config/files/spark-defaults.conf /tmp/spark-defaults.conf
+sed -i "s/SCALA_VERSION_PLACEHOLDER/$scala_version/g" /tmp/spark-defaults.conf
+cp /tmp/spark-defaults.conf /opt/spark/conf/spark-defaults.conf
+rm /tmp/spark-defaults.conf
 
 # add SPARK_HOME to bash profile
 cat <<EOT >> /home/combine/.bashrc
