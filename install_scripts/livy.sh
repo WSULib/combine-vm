@@ -44,6 +44,7 @@ HADOOP_CONF_DIR=$HADOOP_PREFIX/etc/hadoop
 HADOOP_HDFS_HOME=$HADOOP_PREFIX
 HADOOP_MAPRED_HOME=$HADOOP_PREFIX
 HADOOP_YARN_HOME=$HADOOP_PREFIX
+PYSPARK_PYTHON=/opt/miniconda/envs/combine/bin/python
 EOT
 
 # set configurations in livy-conf.sh
