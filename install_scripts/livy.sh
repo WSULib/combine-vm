@@ -61,3 +61,6 @@ EOT
 
 # make a symlink from ingestion3 jar file to a spot in livy application directory
 ln -s /opt/ingestion3/target/scala-$scala_version/ingestion3_$scala_version-0.0.1.jar /opt/livy/rsc/target/jars/ingestion3.jar
+
+# make symlink for elasticsearch-hadoop jar file
+ln -s /opt/elasticsearch-hadoop-5.6.2/dist/elasticsearch-hadoop-5.6.2.jar /opt/livy/rsc/target/jars/elasticsearch-hadoop-5.6.2.jar

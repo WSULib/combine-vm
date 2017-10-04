@@ -55,3 +55,9 @@ $HADOOP_PREFIX/bin/hdfs namenode -format
 
 # Re-establish permissions
 sudo chown -R combine:combine /opt/hadoop
+
+# setup Elasticsearch-Hadoop connector
+# https://www.elastic.co/products/hadoop
+mkdir -p /opt/elasticsearch-hadoop-5.6.2/dist
+# use jar file with combine-vm build
+cp $SHARED_DIR/config/files/elasticsearch-hadoop-5.6.2.jar /opt/elasticsearch-hadoop-5.6.2/dist/elasticsearch-hadoop-5.6.2.jar
