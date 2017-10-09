@@ -53,7 +53,7 @@ cat <<EOT >> /opt/livy/conf/livy.conf
 livy.spark.master = yarn
 livy.spark.deployMode = cluster
 livy.impersonation.enabled = true
-livy.file.local-dir-whitelist = /opt/ingestion3/target/scala-$scala_version/
+livy.file.local-dir-whitelist = /opt/ingestion3/target/scala-$scala_version/,/opt/combine/core/spark/
 livy.server.recovery.mode = recovery
 livy.server.recovery.state-store = filesystem
 livy.server.recovery.state-store.url = hdfs://localhost/livy_sessions
