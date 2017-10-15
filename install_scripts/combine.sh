@@ -32,6 +32,7 @@ cd /opt/livy/python-api
 python setup.py install
 
 # Install combine dependencies
+apt-get -y install libmysql-java
 cd /opt/combine
 pip install -r requirements.txt
 
