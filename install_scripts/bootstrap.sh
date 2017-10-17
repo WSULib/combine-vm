@@ -78,6 +78,20 @@ chmod +x /usr/bin/alltails
 # upgrade setuptools so that Livy will install
 sudo -H pip install setuptools --upgrade
 
+# install miniconda
+cd /tmp/
+wget https://repo.continuum.io/miniconda/Miniconda2-4.3.21-Linux-x86_64.sh -O miniconda.sh
+bash miniconda.sh -b -p /opt/miniconda
+export PATH="/opt/miniconda/bin:$PATH"
+conda config --set always_yes yes
+conda config --add channels conda-forge
+# put in combine's path
+echo "export PATH=/opt/miniconda/bin:$PATH" >> /home/combine/.bashrc
+
+# create combine conda environment for first time
+conda create -n combine python=3.5
+source activate combine
+
 # DB install
 
 # Set MySQL password
