@@ -43,6 +43,9 @@ python /opt/combine/manage.py makemigrations core
 python /opt/combine/manage.py migrate core
 python /opt/combine/manage.py migrate
 
+# manually create additional tables from sql script, not managed by Django
+mysql --user=root --password=$SQL_PASSWORD combine < core/inc/combine_tables.sql
+
 # Create superuser
 echo "from django.contrib.auth.models import User; User.objects.create_superuser('combine', 'libwebmaster@wayne.edu', '$SQL_PASSWORD')" | python /opt/combine/manage.py shell
 
