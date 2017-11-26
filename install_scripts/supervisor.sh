@@ -36,6 +36,10 @@ chown -R combine:combine /var/log/hadoop
 mkdir /var/log/livy
 chown -R combine:combine /var/log/livy
 
+# make logs folder for pyjxslt
+mkdir /var/log/pyjxslt
+chown -R combine:combine /var/log/pyjxslt
+
 # restart
 service supervisor stop
 service supervisor start
